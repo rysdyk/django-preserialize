@@ -4,7 +4,7 @@ kwargs = {
     'packages': ['preserialize'],
     'include_package_data': True,
     'install_requires': [
-        'django>=1.8,<=1.11.16',
+        'django>=1.8,<=1.12',
     ],
     'test_suite': 'test_suite',
     'name': 'django-preserialize',
@@ -23,6 +23,7 @@ kwargs = {
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.8',
     ],
 }
 
