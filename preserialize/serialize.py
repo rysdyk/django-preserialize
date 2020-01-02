@@ -178,7 +178,7 @@ class Serializer(object):
         if isinstance(obj, dict):
             exclude = exclude or []
             if not fields:
-                fields = iter(obj.keys())
+                fields = iter(list(obj.keys()))
             fields = [x for x in fields if x not in exclude]
             return model_to_dict(obj, fields=fields, **options)
 
