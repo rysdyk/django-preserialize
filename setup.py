@@ -4,7 +4,7 @@ kwargs = {
     'packages': ['preserialize'],
     'include_package_data': True,
     'install_requires': [
-        'Django>=1.8,>2.0',
+        'Django>2.0,<3.0',
     ],
     'test_suite': 'test_suite',
     'name': 'django-preserialize',
