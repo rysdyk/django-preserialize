@@ -1,7 +1,9 @@
 import collections
 from django.db import models
 from django.db.models.fields import Field
-from django.db.models import FieldDoesNotExist
+# from django.db.models import FieldDoesNotExist
+# for Django 3
+from django.core.exceptions import FieldDoesNotExist
 
 
 PSEUDO_SELECTORS = (':all', ':pk', ':local', ':related')
