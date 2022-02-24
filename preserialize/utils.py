@@ -46,7 +46,7 @@ class ModelFieldResolver(object):
         local = [f for f in model._meta.fields]
         m2m = [f for f in model._meta.many_to_many]
         fields = local + m2m
-        names = tuple([x.name for x in fields])
+        names = tuple([x.get_attname() for x in fields])
 
         return {
             ':local': dict(list(zip(names, fields))),
@@ -142,7 +142,7 @@ def get_field_value(obj, name, allow_missing=False):
                 if isinstance(field, Field) and field.__class__.__name__ \
                         not in ('JSONField',):
                     value = field.get_prep_value(value)
-            except FieldDoesNotExist:
+            except: #FieldDoesNotExist:
                 pass
 
     elif hasattr(obj, '__getitem__') and name in obj:
