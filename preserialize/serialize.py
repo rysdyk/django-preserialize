@@ -63,7 +63,7 @@ def model_to_dict(instance, **options):
     attrs = {}
 
     if options['prehook']:
-        if isinstance(options['prehook'], collections.Callable):
+        if isinstance(options['prehook'], collections.abc.Callable):
             instance = options['prehook'](instance)
             if instance is None:
                 return attrs
@@ -128,7 +128,7 @@ def queryset_to_list(queryset, **options):
     options = _defaults(options)
 
     if options['prehook']:
-        if isinstance(options['prehook'], collections.Callable):
+        if isinstance(options['prehook'], collections.abc.Callable):
             queryset = options['prehook'](queryset)
             if queryset is None:
                 return []

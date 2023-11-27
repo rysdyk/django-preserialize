@@ -157,7 +157,7 @@ def get_field_value(obj, name, allow_missing=False):
         value = value.all()
 
     # Check for callable
-    elif isinstance(value, collections.Callable):
+    elif isinstance(value, collections.abc.Callable):
         value = value()
 
     return value
